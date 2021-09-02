@@ -64,6 +64,17 @@ public class UsuarioController {
 	public ResponseEntity<Usuario> postUsuario (@RequestBody @Valid Usuario usuario){
 		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(usuario));
 	}
+	@PostMapping("/logar")
+	public ResponseEntity<UsuarioLogin> Autentication(@RequestBody Optional<UsuarioLogin> user) {
+		return usuarioService.Logar(user).map(resp -> ResponseEntity.ok(resp))
+				.orElse(ResponseEntity.status(HttpStatus.UNAUTHORIZED).build());
+	}
+	
+	@PostMapping("/cadastrar")
+	public ResponseEntity<Usuario> Post(@RequestBody Usuario usuario) {
+		return ResponseEntity.status(HttpStatus.CREATED)
+				.body(usuarioService.CadastrarUsuario(usuario));
+	}
 	
 	@PutMapping
 	public ResponseEntity<Usuario> putUsuario (@RequestBody @Valid Usuario usuario){
@@ -75,15 +86,4 @@ public class UsuarioController {
 		repository.deleteById(id);
 	}
 	
-	@PostMapping("/logar")
-	public ResponseEntity<UsuarioLogin> Autentication(@RequestBody Optional<UsuarioLogin> user) {
-		return usuarioService.Logar(user).map(resp -> ResponseEntity.ok(resp))
-				.orElse(ResponseEntity.status(HttpStatus.UNAUTHORIZED).build());
-	}
-
-	@PostMapping("/cadastrar")
-	public ResponseEntity<Usuario> Post(@RequestBody Usuario usuario) {
-		return ResponseEntity.status(HttpStatus.CREATED)
-				.body(usuarioService.CadastrarUsuario(usuario));
-	}
 }

@@ -21,7 +21,7 @@ import com.projetointegradorgrupo3.ProjetoReintegrar.repository.PostagemReposito
 
 @RestController
 @RequestMapping("/postagem")
-@CrossOrigin("*")
+@CrossOrigin(origins ="*", allowedHeaders = "*")
 public class PostagemController {
 	@Autowired
     private PostagemRepository repository;
