@@ -1,25 +1,20 @@
 package com.projetointegradorgrupo3.ProjetoReintegrar.model;
 
-import java.time.LocalDate;
 import java.util.List;
 
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.Email;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.sun.istack.NotNull;
+
 
 @Entity
 @Table (name = "usuario")
@@ -37,24 +32,19 @@ public class Usuario {
 //	@JsonFormat(pattern = "yyyy-MM-dd")
 //	private LocalDate dataNascimento ;
 	
-	@NotBlank
-	@Size (min = 5, max = 20)
+	
 	private String genero;
 	
 	@NotBlank
 	@Size (min = 5, max = 100)
 	private String email;
 	
-	//@Pattern TODO pesquisar depois
 	private String telefone;
 	
 	@NotBlank
 	@Size (min = 6)
 	private String senha;
 	
-//	@NotBlank
-//	@Size (min=5,max=100)
-//	private String periodo;
 	
 	@Min (0)
 	private double pretensaoSalarial;
@@ -64,25 +54,20 @@ public class Usuario {
 	private String tipo;
 
 	
-	@ManyToOne
-	@JsonIgnoreProperties ("usuarios")
-	private Categoria categoria;
-	
+		
 	@OneToMany (mappedBy = "usuario", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties ("usuario")
 	private List<Postagem> postagens;
 	
-	public Usuario (long id, String nome , LocalDate dataNascimento, String genero , String email
+	public Usuario (long id, String nome , String genero , String email
 			, String telefone , String senha , String periodo , double pretensaoSalarial) {
 		
 		this.id = id;
 		this.nome = nome;
-//		this.dataNascimento = dataNascimento;
 		this.genero = genero;
 		this.email = email;
 		this.telefone = telefone;
 		this.senha = senha;
-//		this.periodo = periodo;
 		this.pretensaoSalarial = pretensaoSalarial;
 	}
 	
@@ -115,13 +100,6 @@ public class Usuario {
 		this.id = id;
 	}
 
-	public Categoria getCategoria() {
-		return categoria;
-	}
-
-	public void setCategoria(Categoria categoria) {
-		this.categoria = categoria;
-	}
 
 	public List<Postagem> getPostagens() {
 		return postagens;
@@ -171,13 +149,6 @@ public class Usuario {
 		this.senha = senha;
 	}
 
-//	public String getPeriodo() {
-//		return periodo;
-//	}
-//
-//	public void setPeriodo(String periodo) {
-//		this.periodo = periodo;
-//	}
 
 	public double getPretensaoSalarial() {
 		return pretensaoSalarial;
@@ -187,13 +158,7 @@ public class Usuario {
 		this.pretensaoSalarial = pretensaoSalarial;
 	}
 
-//	public LocalDate getDataNascimento() {
-//		return dataNascimento;
-//	}
-//
-//	public void setDataNascimento(LocalDate dataNascimento) {
-//		this.dataNascimento = dataNascimento;
-//	}
+
 	
 	
 }

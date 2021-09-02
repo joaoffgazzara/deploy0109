@@ -20,7 +20,7 @@ import com.projetointegradorgrupo3.ProjetoReintegrar.repository.TemaRepository;
 
 @RestController
 @RequestMapping("/tema")
-@CrossOrigin("*")
+@CrossOrigin(origins ="*", allowedHeaders = "*")
 public class TemaController {
 
 	@Autowired

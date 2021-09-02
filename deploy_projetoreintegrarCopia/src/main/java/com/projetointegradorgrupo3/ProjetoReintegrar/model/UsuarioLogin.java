@@ -1,10 +1,14 @@
 package com.projetointegradorgrupo3.ProjetoReintegrar.model;
 
-import java.time.LocalDate;
+
 
 public class UsuarioLogin {
 	
+	private long id;
+	
 	private String nome ;
+	
+	private String genero;
 	
 	private String email ; 
 	
@@ -14,13 +18,7 @@ public class UsuarioLogin {
 	
 	private String foto;
 	
-//	private LocalDate dataNascimento;
-	
-	private String genero;
-	
 	private String telefone;
-	
-	private long id;
 	
 	private String tipo;
 	
@@ -34,13 +32,6 @@ public class UsuarioLogin {
 		this.tipo = tipo;
 	}
 
-//	public LocalDate getDataNascimento() {
-//		return dataNascimento;
-//	}
-//
-//	public void setDataNascimento(LocalDate dataNascimento) {
-//		this.dataNascimento = dataNascimento;
-//	}
 
 	public String getGenero() {
 		return genero;
