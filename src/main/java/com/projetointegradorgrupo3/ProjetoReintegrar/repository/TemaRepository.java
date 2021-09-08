@@ -10,5 +10,6 @@ import com.projetointegradorgrupo3.ProjetoReintegrar.model.Tema;
 @Repository
 public interface TemaRepository extends JpaRepository<Tema,Long> {
 
-	public List<Tema> findAllByDescricaoContainingIgnoreCase(String titulo);
+
+	public List<Tema> findAllByNomeContainingIgnoreCase(String nome);
 }

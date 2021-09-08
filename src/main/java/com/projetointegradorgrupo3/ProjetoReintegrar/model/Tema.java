@@ -24,7 +24,7 @@ public class Tema {
 	
 	@NotBlank
 	@Size(min = 0, max = 100)
-	private String descricao;
+	private String nome;
 	
 	@OneToMany (mappedBy = "tema", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties ("tema")
@@ -38,12 +38,12 @@ public class Tema {
 		this.id = id;
 	}
 
-	public String getDescricao() {
-		return descricao;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public List<Postagem> getPostagem() {

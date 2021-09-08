@@ -29,11 +29,18 @@ public class TemaController {
 	@GetMapping
     public ResponseEntity<List<Tema>> findAll(){
         return ResponseEntity.ok(repository.findAll());
+
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Tema> getById (@PathVariable long id){
+        return repository.findById(id).map(resp -> ResponseEntity.ok(resp))
+                .orElse(ResponseEntity.notFound().build());
     }
 	
-	@GetMapping("/tema/{tema}")
-    public ResponseEntity<List<Tema>> GetByDescricao(@PathVariable String tema){
-        return ResponseEntity.ok(repository.findAllByDescricaoContainingIgnoreCase(tema));
+	@GetMapping("/nome/{nome}")
+    public ResponseEntity<List<Tema>> GetByName(@PathVariable String nome){
+        return ResponseEntity.ok(repository.findAllByNomeContainingIgnoreCase(nome));
     }
 	
 	@PostMapping
