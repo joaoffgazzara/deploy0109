@@ -18,76 +18,75 @@ import com.sun.istack.NotNull;
 @Entity
 @Table(name = "postagem")
 public class Postagem {
-		
-		@Id
-		@GeneratedValue(strategy = GenerationType.IDENTITY)
-		private long id;
-		
-		@Size(min=0, max= 100)
-		private String titulo;
-		
-		@NotNull
-		@Size(min=0,max=700)
-		private String corpo;
-		
-		@Temporal(TemporalType.TIMESTAMP)
-		private Date data = new java.sql.Date(System.currentTimeMillis());
-		
-		
-		@ManyToOne
-		@JsonIgnoreProperties ("postagens")
-		private Usuario usuario;
-		
-		@ManyToOne
-		@JsonIgnoreProperties ("postagens")
-		private Tema tema;
 
-		public long getId() {
-			return id;
-		}
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long id;
 
-		public Date getData() {
-			return data;
-		}
+	@Size(min = 0, max = 100)
+	private String titulo;
 
-		public void setData(Date data) {
-			this.data = data;
-		}
+	@NotNull
+	@Size(min = 0, max = 700)
+	private String corpo;
 
-		public Usuario getUsuario() {
-			return usuario;
-		}
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date data = new java.sql.Date(System.currentTimeMillis());
 
-		public void setUsuario(Usuario usuario) {
-			this.usuario = usuario;
-		}
 
-		public void setId(long id) {
-			this.id = id;
-		}
+	@ManyToOne
+	@JsonIgnoreProperties("postagens")
+	private Usuario usuario;
 
-		public String getTitulo() {
-			return titulo;
-		}
+	@ManyToOne
+	@JsonIgnoreProperties("postagens")
+	private Tema tema;
 
-		public void setTitulo(String titulo) {
-			this.titulo = titulo;
-		}
+	public long getId() {
+		return id;
+	}
 
-		public String getCorpo() {
-			return corpo;
-		}
+	public void setId(long id) {
+		this.id = id;
+	}
 
-		public void setCorpo(String corpo) {
-			this.corpo = corpo;
-		}
+	public String getTitulo() {
+		return titulo;
+	}
 
-		public Date getDate() {
-			return data;
-		}
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
 
-		public void setDate(Date date) {
-			this.data = date;
-		}
-		
+	public String getCorpo() {
+		return corpo;
+	}
+
+	public void setCorpo(String corpo) {
+		this.corpo = corpo;
+	}
+
+	public Date getData() {
+		return data;
+	}
+
+	public void setData(Date data) {
+		this.data = data;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
+	public Tema getTema() {
+		return tema;
+	}
+
+	public void setTema(Tema tema) {
+		this.tema = tema;
+	}
 }

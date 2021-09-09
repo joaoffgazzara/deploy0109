@@ -74,23 +74,6 @@ public class Usuario {
 	public Usuario () {
 		
 	}
-	
-	
-	public String getTipo() {
-		return tipo;
-	}
-
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
-	}
-
-	public String getFoto() {
-		return foto;
-	}
-
-	public void setFoto(String foto) {
-		this.foto = foto;
-	}
 
 	public long getId() {
 		return id;
@@ -98,15 +81,6 @@ public class Usuario {
 
 	public void setId(long id) {
 		this.id = id;
-	}
-
-
-	public List<Postagem> getPostagens() {
-		return postagens;
-	}
-
-	public void setPostagens(List<Postagem> postagens) {
-		this.postagens = postagens;
 	}
 
 	public String getNome() {
@@ -149,7 +123,6 @@ public class Usuario {
 		this.senha = senha;
 	}
 
-
 	public double getPretensaoSalarial() {
 		return pretensaoSalarial;
 	}
@@ -158,7 +131,27 @@ public class Usuario {
 		this.pretensaoSalarial = pretensaoSalarial;
 	}
 
+	public String getFoto() {
+		return foto;
+	}
 
-	
-	
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
+	public List<Postagem> getPostagens() {
+		return postagens;
+	}
+
+	public void setPostagens(List<Postagem> postagens) {
+		this.postagens = postagens;
+	}
 }
