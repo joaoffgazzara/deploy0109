@@ -12,7 +12,7 @@ INSERT INTO tema(id, nome) VALUES(1, 'apresentacao');
 INSERT INTO tema(id, nome) VALUES(2, 'tecnologia');
 
 INSERT INTO postagem(id, titulo, corpo, usuario_id, tema_id)
-VALUES (1, 'Olá mundo', 'fala galera, como vai?', 1, 1);
+VALUES (1, 'Ola mundo', 'fala galera, como vai?', 1, 1);
 
 INSERT INTO postagem(id, titulo, corpo, usuario_id, tema_id)
 VALUES (2, 'Java', 'gente, como faz para uma classe herdar da outra?', 2, 2);
