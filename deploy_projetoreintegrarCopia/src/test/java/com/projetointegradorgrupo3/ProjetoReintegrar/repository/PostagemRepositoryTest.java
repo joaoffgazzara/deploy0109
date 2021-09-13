@@ -22,7 +22,7 @@ public class PostagemRepositoryTest {
 
     @Test
     public void deveriaProcurarPostagemPorTitulo(){
-        List<Postagem> postagensComOla = repository.findAllByTituloContainingIgnoreCase("Olá");
+        List<Postagem> postagensComOla = repository.findAllByTituloContainingIgnoreCase("Ola");
 
         Assertions.assertTrue(postagensComOla.size() > 0);
     }

@@ -45,7 +45,7 @@ public class PostagemControllerTest {
                 MockMvcRequestBuilders.get(uri))
                 .andExpect(MockMvcResultMatchers.content()
                         .contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
-                .andExpect(MockMvcResultMatchers.jsonPath("$[0].titulo", Matchers.is("Olá mundo")))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[0].titulo", Matchers.is("Ola mundo")))
                 .andExpect(MockMvcResultMatchers.jsonPath("$[0].id", Matchers.is(1)))
                 .andExpect(MockMvcResultMatchers.jsonPath("$[0].corpo", Matchers.is("fala galera, como vai?")))
                 .andExpect(MockMvcResultMatchers.jsonPath("$[1].titulo", Matchers.is("Java")))

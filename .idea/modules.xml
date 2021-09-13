@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="ProjectModuleManager">
-    <modules>
-      <module fileurl="file://$PROJECT_DIR$/deploy_projetoreintegrarCopia/ProjetoReintegrar.iml" filepath="$PROJECT_DIR$/deploy_projetoreintegrarCopia/ProjetoReintegrar.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/deploy0109.iml" filepath="$PROJECT_DIR$/.idea/deploy0109.iml" />
-    </modules>
-  </component>
-</project>
