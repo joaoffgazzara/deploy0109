@@ -61,6 +61,10 @@
 		<scope>runtime</scope> 
 		</dependency> 
 		<!-- Dependência PostgreSQL -->
+		<dependency>   
+			<groupId>org.postgresql</groupId>   
+			<artifactId>postgresql</artifactId> 
+		</dependency>
 		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -75,7 +79,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<plugin> 
+			<plugin>  
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
 				</plugin>

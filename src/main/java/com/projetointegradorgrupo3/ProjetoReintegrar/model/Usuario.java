@@ -1,8 +1,10 @@
 package com.projetointegradorgrupo3.ProjetoReintegrar.model;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,6 +15,7 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 
@@ -28,9 +31,9 @@ public class Usuario {
 	@Size (min = 1, max = 100)
 	private String nome;
 	
-//	@Column(name = "tb_nascimento")
-//	@JsonFormat(pattern = "yyyy-MM-dd")
-//	private LocalDate dataNascimento ;
+	@Column(name = "tb_nascimento")
+	@JsonFormat(pattern = "yyyy-MM-dd")
+	private LocalDate dataNascimento ;
 	
 	
 	private String genero;
@@ -206,4 +209,14 @@ public class Usuario {
 	public void setPostagens(List<Postagem> postagens) {
 		this.postagens = postagens;
 	}
+
+	public LocalDate getDataNascimento() {
+		return dataNascimento;
+	}
+
+	public void setDataNascimento(LocalDate dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}
+	
+	
 }
