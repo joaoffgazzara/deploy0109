@@ -45,11 +45,16 @@ public class UsuarioService {
 				user.get().setEmail(usuario.get().getEmail());
 				user.get().setSenha(usuario.get().getSenha());
 				user.get().setFoto(usuario.get().getFoto());
-//				user.get().setDataNascimento(usuario.get().getDataNascimento());
+				user.get().setDataNascimento(usuario.get().getDataNascimento());
 				user.get().setGenero(usuario.get().getGenero());
 				user.get().setTelefone(usuario.get().getTelefone());
 				user.get().setId(usuario.get().getId());
 				user.get().setTipo(usuario.get().getTipo());
+				user.get().setCargo(usuario.get().getCargo());
+				user.get().setBio(usuario.get().getBio());
+				user.get().setLinkFace(usuario.get().getLinkFace());
+				user.get().setLinkInsta(usuario.get().getLinkInsta());
+				user.get().setLinkLinkedin(usuario.get().getLinkLinkedin());
 				
 				return user ;
 			}
