@@ -52,9 +52,21 @@ public class Usuario {
 	private String foto;
 	
 	private String tipo;
+	
+	private String cargo;
+	
+	private String bio;
+	
+	private String linkLinkedin;
+	
+	private String linkFace;
+	
+	private String linkInsta;
 
 	
 		
+	
+
 	@OneToMany (mappedBy = "usuario", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties ("usuario")
 	private List<Postagem> postagens;
@@ -73,6 +85,46 @@ public class Usuario {
 	
 	public Usuario () {
 		
+	}
+	
+	public String getCargo() {
+		return cargo;
+	}
+
+	public void setCargo(String cargo) {
+		this.cargo = cargo;
+	}
+
+	public String getBio() {
+		return bio;
+	}
+
+	public void setBio(String bio) {
+		this.bio = bio;
+	}
+
+	public String getLinkLinkedin() {
+		return linkLinkedin;
+	}
+
+	public void setLinkLinkedin(String linkLinkedin) {
+		this.linkLinkedin = linkLinkedin;
+	}
+
+	public String getLinkFace() {
+		return linkFace;
+	}
+
+	public void setLinkFace(String linkFace) {
+		this.linkFace = linkFace;
+	}
+
+	public String getLinkInsta() {
+		return linkInsta;
+	}
+
+	public void setLinkInsta(String linkInsta) {
+		this.linkInsta = linkInsta;
 	}
 
 	public long getId() {
